@@ -613,4 +613,32 @@ ul {
         padding: 25px;
     }
 
+    .social-links {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    color: #2563eb;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.social-links a:hover {
+    color: #1d4ed8;
+}
+
+.contact-info {
+    max-width: 700px;
+    margin: 0 auto 25px;
+    text-align: center;
+    color: #475569;
+}
+
+.contact-info p {
+    margin: 8px 0;
+}
 }
