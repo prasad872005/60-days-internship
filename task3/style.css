@@ -1,0 +1,151 @@
+/* =====================================================
+   TASK 3 - USER MANAGEMENT SYSTEM
+   Custom Styling
+===================================================== */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7fb;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+    border: none;
+    border-radius: 12px;
+}
+
+.card.shadow {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    border-radius: 7px;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   FORM INPUTS
+========================= */
+
+.form-control,
+.form-select {
+    border-radius: 7px;
+    padding: 10px 12px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.table {
+    vertical-align: middle;
+}
+
+.table thead th {
+    white-space: nowrap;
+}
+
+
+/* =========================
+   PROFILE IMAGE
+========================= */
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   ALERTS
+========================= */
+
+.alert {
+    border-radius: 8px;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard-card {
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    color: #6c757d;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 576px) {
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .card-body {
+        padding: 20px !important;
+    }
+
+    .btn {
+        margin-bottom: 5px;
+    }
+
+    .table {
+        font-size: 14px;
+    }
+
+}
