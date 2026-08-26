@@ -1,263 +1,541 @@
-/* =========================
-   TASK 2 JAVASCRIPT
-========================= */
+/* =====================================================
+   TASK 2 - INTERACTIVE UI & FRONTEND DEVELOPMENT
+   JavaScript
+===================================================== */
 
 
-/* =========================
+/* =====================================================
    1. VARIABLES
-========================= */
+===================================================== */
 
-const welcomeModal =
-    document.getElementById("welcomeModal");
+const registerForm = document.getElementById("registerForm");
+
+const registerName = document.getElementById("registerName");
+const registerEmail = document.getElementById("registerEmail");
+const registerPassword = document.getElementById("registerPassword");
+const confirmPassword = document.getElementById("confirmPassword");
+
+const toggleRegisterPassword =
+    document.getElementById("toggleRegisterPassword");
+
+const toggleConfirmPassword =
+    document.getElementById("toggleConfirmPassword");
+
+const registerSuccess =
+    document.getElementById("registerSuccess");
 
 
-/* =========================
+/* =====================================================
    2. ARRAY
-========================= */
+===================================================== */
 
 const technologies = [
     "HTML5",
     "CSS3",
     "JavaScript",
     "Bootstrap 5",
-    "Fetch API"
+    "React.js",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "MySQL"
 ];
 
-console.log("Technologies:", technologies);
+console.log("Technologies used in Task 2:", technologies);
 
 
-/* =========================
+/* =====================================================
    3. FUNCTION
-========================= */
+===================================================== */
 
-function showWelcome() {
+function showWelcomeMessage() {
 
     console.log(
-        "Welcome to AuthUI - Task 2!"
+        "Welcome to Task 2 - Interactive UI & Frontend Development!"
     );
 
 }
 
-
-/* =========================
-   4. PAGE LOAD EVENT
-========================= */
-
-window.addEventListener("load", function () {
-
-    showWelcome();
-
-});
+showWelcomeMessage();
 
 
-/* =========================
-   5. NAVBAR SMOOTH SCROLL
-========================= */
-
-const navLinks =
-    document.querySelectorAll(
-        ".navbar a[href^='#']"
-    );
+/* =====================================================
+   4. SHOW / HIDE PASSWORD
+===================================================== */
 
 
-navLinks.forEach(function (link) {
+/* Register Password */
 
-    link.addEventListener("click", function () {
+if (toggleRegisterPassword) {
 
-        const targetId =
-            link.getAttribute("href");
+    toggleRegisterPassword.addEventListener("click", function () {
 
-        const target =
-            document.querySelector(targetId);
+        if (registerPassword.type === "password") {
 
-        if (target) {
+            registerPassword.type = "text";
 
-            target.scrollIntoView({
-                behavior: "smooth"
-            });
+            toggleRegisterPassword.innerHTML =
+                '<i class="bi bi-eye-slash"></i>';
+
+        } else {
+
+            registerPassword.type = "password";
+
+            toggleRegisterPassword.innerHTML =
+                '<i class="bi bi-eye"></i>';
 
         }
 
     });
 
-});
-
-/* =========================
-   LOGIN PAGE
-========================= */
+}
 
 
-/* =========================
-   LOGIN VARIABLES
-========================= */
+/* Confirm Password */
 
-const loginForm =
-    document.getElementById("loginForm");
+if (toggleConfirmPassword) {
 
-const loginEmail =
-    document.getElementById("loginEmail");
+    toggleConfirmPassword.addEventListener("click", function () {
 
-const loginPassword =
-    document.getElementById("loginPassword");
+        if (confirmPassword.type === "password") {
 
-const toggleLoginPassword =
-    document.getElementById("toggleLoginPassword");
+            confirmPassword.type = "text";
 
-const loginPasswordIcon =
-    document.getElementById("loginPasswordIcon");
+            toggleConfirmPassword.innerHTML =
+                '<i class="bi bi-eye-slash"></i>';
 
-const loginEmailError =
-    document.getElementById("loginEmailError");
+        } else {
 
-const loginPasswordError =
-    document.getElementById("loginPasswordError");
+            confirmPassword.type = "password";
 
-const loginMessage =
-    document.getElementById("loginMessage");
-
-
-/* =========================
-   SHOW / HIDE PASSWORD
-========================= */
-
-if (toggleLoginPassword) {
-
-    toggleLoginPassword.addEventListener(
-        "click",
-        function () {
-
-            if (loginPassword.type === "password") {
-
-                loginPassword.type = "text";
-
-                loginPasswordIcon.classList.remove(
-                    "bi-eye"
-                );
-
-                loginPasswordIcon.classList.add(
-                    "bi-eye-slash"
-                );
-
-            } else {
-
-                loginPassword.type = "password";
-
-                loginPasswordIcon.classList.remove(
-                    "bi-eye-slash"
-                );
-
-                loginPasswordIcon.classList.add(
-                    "bi-eye"
-                );
-
-            }
+            toggleConfirmPassword.innerHTML =
+                '<i class="bi bi-eye"></i>';
 
         }
-    );
+
+    });
 
 }
 
 
-/* =========================
-   LOGIN FORM VALIDATION
-========================= */
+/* =====================================================
+   5. NAME VALIDATION - KEYUP EVENT
+===================================================== */
 
-if (loginForm) {
+if (registerName) {
 
-    loginForm.addEventListener(
+    registerName.addEventListener("keyup", function () {
+
+        const name = registerName.value.trim();
+
+        const namePattern = /^[A-Za-z ]+$/;
+
+        if (
+            name.length >= 3 &&
+            namePattern.test(name)
+        ) {
+
+            registerName.classList.remove("is-invalid");
+
+            registerName.classList.add("is-valid");
+
+        } else {
+
+            registerName.classList.remove("is-valid");
+
+            registerName.classList.add("is-invalid");
+
+        }
+
+    });
+
+}
+
+
+/* =====================================================
+   6. EMAIL VALIDATION - CHANGE EVENT
+===================================================== */
+
+if (registerEmail) {
+
+    registerEmail.addEventListener("change", function () {
+
+        const email = registerEmail.value.trim();
+
+        const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (emailPattern.test(email)) {
+
+            registerEmail.classList.remove("is-invalid");
+
+            registerEmail.classList.add("is-valid");
+
+        } else {
+
+            registerEmail.classList.remove("is-valid");
+
+            registerEmail.classList.add("is-invalid");
+
+        }
+
+    });
+
+}
+
+
+/* =====================================================
+   7. PASSWORD VALIDATION
+===================================================== */
+
+if (registerPassword) {
+
+    registerPassword.addEventListener("keyup", function () {
+
+        const password =
+            registerPassword.value;
+
+        if (password.length >= 6) {
+
+            registerPassword.classList.remove("is-invalid");
+
+            registerPassword.classList.add("is-valid");
+
+        } else {
+
+            registerPassword.classList.remove("is-valid");
+
+            registerPassword.classList.add("is-invalid");
+
+        }
+
+    });
+
+}
+
+
+/* =====================================================
+   8. PASSWORD MATCH CHECK
+===================================================== */
+
+if (confirmPassword) {
+
+    confirmPassword.addEventListener("keyup", function () {
+
+        const password =
+            registerPassword.value;
+
+        const confirm =
+            confirmPassword.value;
+
+        if (
+            confirm.length > 0 &&
+            password === confirm
+        ) {
+
+            confirmPassword.classList.remove("is-invalid");
+
+            confirmPassword.classList.add("is-valid");
+
+        } else {
+
+            confirmPassword.classList.remove("is-valid");
+
+            confirmPassword.classList.add("is-invalid");
+
+        }
+
+    });
+
+}
+
+
+/* =====================================================
+   9. DUMMY AJAX FUNCTION
+   Simulates checking email availability
+===================================================== */
+
+function checkEmailExists(email) {
+
+    return new Promise(function (resolve) {
+
+        setTimeout(function () {
+
+            /*
+               Dummy existing email.
+               This simulates a PHP/AJAX response.
+            */
+
+            const existingEmail =
+                "test@gmail.com";
+
+            if (email.toLowerCase() === existingEmail) {
+
+                resolve(true);
+
+            } else {
+
+                resolve(false);
+
+            }
+
+        }, 800);
+
+    });
+
+}
+
+
+/* =====================================================
+   10. REGISTRATION FORM SUBMIT
+===================================================== */
+
+if (registerForm) {
+
+    registerForm.addEventListener(
         "submit",
-        function (event) {
+        async function (event) {
 
             event.preventDefault();
 
 
-            /* Clear messages */
+            /* Get values */
 
-            loginEmailError.textContent = "";
-
-            loginPasswordError.textContent = "";
-
-            loginMessage.textContent = "";
-
-
-            let isValid = true;
-
-
-            /* =========================
-               EMAIL
-            ========================== */
+            const name =
+                registerName.value.trim();
 
             const email =
-                loginEmail.value.trim();
+                registerEmail.value.trim();
+
+            const password =
+                registerPassword.value;
+
+            const confirm =
+                confirmPassword.value;
+
+
+            /* Patterns */
+
+            const namePattern =
+                /^[A-Za-z ]+$/;
 
             const emailPattern =
                 /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 
-            if (email === "") {
+            /* Clear success message */
 
-                loginEmailError.textContent =
-                    "Please enter your email.";
+            registerSuccess.textContent = "";
 
-                isValid = false;
+            registerSuccess.className =
+                "success-message mt-3";
 
-            } else if (
+
+            /* Validation */
+
+            if (name === "") {
+
+                alert("Please enter your full name.");
+
+                registerName.focus();
+
+                return;
+
+            }
+
+
+            if (
+                name.length < 3 ||
+                !namePattern.test(name)
+            ) {
+
+                alert(
+                    "Name should contain at least 3 letters and only letters and spaces."
+                );
+
+                registerName.focus();
+
+                return;
+
+            }
+
+
+            if (
+                email === "" ||
                 !emailPattern.test(email)
             ) {
 
-                loginEmailError.textContent =
-                    "Please enter a valid email address.";
-
-                isValid = false;
-
-            }
-
-
-            /* =========================
-               PASSWORD
-            ========================== */
-
-            const password =
-                loginPassword.value;
-
-
-            if (password === "") {
-
-                loginPasswordError.textContent =
-                    "Please enter your password.";
-
-                isValid = false;
-
-            } else if (password.length < 6) {
-
-                loginPasswordError.textContent =
-                    "Password must contain at least 6 characters.";
-
-                isValid = false;
-
-            }
-
-
-            /* =========================
-               SUCCESS
-            ========================== */
-
-            if (isValid) {
-
-                loginMessage.textContent =
-                    "Login successful!";
-
-                loginMessage.style.color =
-                    "green";
-
-                console.log(
-                    "Login submitted:",
-                    email
+                alert(
+                    "Please enter a valid email address."
                 );
 
+                registerEmail.focus();
+
+                return;
+
             }
+
+
+            if (password.length < 6) {
+
+                alert(
+                    "Password must contain at least 6 characters."
+                );
+
+                registerPassword.focus();
+
+                return;
+
+            }
+
+
+            if (password !== confirm) {
+
+                alert(
+                    "Passwords do not match."
+                );
+
+                confirmPassword.focus();
+
+                return;
+
+            }
+
+
+            const terms =
+                document.getElementById("terms");
+
+
+            if (!terms.checked) {
+
+                alert(
+                    "Please accept the Terms and Conditions."
+                );
+
+                return;
+
+            }
+
+
+            /* =================================================
+               DUMMY AJAX EMAIL CHECK
+            ================================================= */
+
+            registerSuccess.textContent =
+                "Checking email availability...";
+
+            registerSuccess.classList.add(
+                "text-primary"
+            );
+
+
+            const emailExists =
+                await checkEmailExists(email);
+
+
+            if (emailExists) {
+
+                registerSuccess.textContent =
+                    "This email is already registered.";
+
+                registerSuccess.classList.remove(
+                    "text-primary"
+                );
+
+                registerSuccess.classList.add(
+                    "text-danger"
+                );
+
+                return;
+
+            }
+
+
+            /* =================================================
+               SUCCESS
+            ================================================= */
+
+            registerSuccess.textContent =
+                "Registration successful! Welcome, " +
+                name +
+                ".";
+
+            registerSuccess.classList.remove(
+                "text-primary"
+            );
+
+            registerSuccess.classList.add(
+                "text-success"
+            );
+
+
+            alert(
+                "Registration successful! Welcome, " +
+                name +
+                "!"
+            );
+
+
+            registerForm.reset();
+
+
+            /* Remove validation classes */
+
+            registerName.classList.remove(
+                "is-valid",
+                "is-invalid"
+            );
+
+            registerEmail.classList.remove(
+                "is-valid",
+                "is-invalid"
+            );
+
+            registerPassword.classList.remove(
+                "is-valid",
+                "is-invalid"
+            );
+
+            confirmPassword.classList.remove(
+                "is-valid",
+                "is-invalid"
+            );
 
         }
     );
 
 }
+
+
+/* =====================================================
+   11. BUTTON HOVER LOG
+===================================================== */
+
+const buttons =
+    document.querySelectorAll(".btn");
+
+buttons.forEach(function (button) {
+
+    button.addEventListener("mouseenter", function () {
+
+        console.log(
+            "Mouse entered button:",
+            button.textContent.trim()
+        );
+
+    });
+
+});
+
+
+/* =====================================================
+   12. PAGE LOAD EVENT
+===================================================== */
+
+window.addEventListener("load", function () {
+
+    console.log(
+        "Task 2 page loaded successfully."
+    );
+
+});
