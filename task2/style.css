@@ -213,4 +213,227 @@ body {
         font-size: 55px;
     }
 
+    /* =========================
+   AUTH PAGES
+========================= */
+
+.auth-page {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #ffffff
+        );
+}
+
+
+/* =========================
+   AUTH SECTION
+========================= */
+
+.auth-section {
+    flex: 1;
+
+    padding: 70px 0;
+}
+
+
+/* =========================
+   AUTH CARD
+========================= */
+
+.auth-card {
+    background: #ffffff;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.10);
+
+    animation: fadeInUp 0.7s ease;
+}
+
+
+/* =========================
+   AUTH ICON
+========================= */
+
+.auth-icon {
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eef2ff;
+
+    color: var(--primary);
+
+    font-size: 45px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.auth-card .form-control,
+.auth-card .input-group-text {
+    padding: 12px;
+}
+
+
+.auth-card .form-control:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 0.2rem rgba(99, 102, 241, 0.15);
+}
+
+
+.auth-card .input-group-text {
+    background: #f8fafc;
+
+    color: var(--primary);
+}
+
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+
+.form-error {
+    color: #dc2626;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+
+    min-height: 20px;
+}
+
+
+/* =========================
+   FORM MESSAGE
+========================= */
+
+.form-message {
+    margin-top: 15px;
+
+    font-weight: 500;
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+.forgot-link,
+.register-link {
+    color: var(--primary);
+
+    font-weight: 500;
+
+    text-decoration: none;
+}
+
+
+.forgot-link:hover,
+.register-link:hover {
+    color: var(--primary-dark);
+
+    text-decoration: underline;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-btn {
+    padding: 12px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+.login-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeInUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 576px) {
+
+    .auth-section {
+        padding: 40px 15px;
+    }
+
+
+    .auth-card {
+        padding: 25px 20px;
+
+        border-radius: 15px;
+    }
+
+
+    .auth-card h1 {
+        font-size: 28px;
+    }
+
+
+    .auth-icon {
+        width: 65px;
+        height: 65px;
+
+        font-size: 35px;
+    }
+
+}
+
 }
