@@ -1,0 +1,216 @@
+/* =========================
+   GLOBAL
+========================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #1e293b;
+}
+
+
+/* =========================
+   CUSTOM COLOR PALETTE
+========================= */
+
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary: #0f172a;
+    --light-bg: #f8fafc;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.custom-navbar {
+    background: var(--secondary);
+}
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.nav-link {
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #a5b4fc !important;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero-slide {
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #ffffff
+        );
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #64748b;
+}
+
+.hero-icon {
+    font-size: 70px;
+    color: var(--primary);
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section-label {
+    color: var(--primary);
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
+.feature-card {
+    border: none;
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eef2ff;
+
+    color: var(--primary);
+
+    font-size: 30px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-box {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.custom-footer {
+    padding: 25px;
+
+    background: var(--secondary);
+
+    color: white;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .hero-slide {
+        min-height: 500px;
+        padding: 60px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .hero-icon {
+        font-size: 55px;
+    }
+
+}
