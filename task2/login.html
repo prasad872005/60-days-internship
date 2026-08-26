@@ -5,304 +5,350 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="AuthUI Login Page">
+        content="AuthUI responsive login page built with HTML, CSS, JavaScript and Bootstrap 5">
+
+    <meta name="author" content="Prasad Gadale">
 
     <title>Login | AuthUI</title>
 
 
     <!-- Bootstrap 5 CSS -->
-
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet">
 
 
     <!-- Bootstrap Icons -->
-
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
         rel="stylesheet">
 
 
     <!-- Google Font -->
-
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
 
     <!-- Custom CSS -->
-
     <link rel="stylesheet" href="style.css">
 
 </head>
 
 
-<body class="auth-page">
+<body>
 
 
-    <!-- =========================
+    <!-- =====================================================
          NAVBAR
-    ========================== -->
+    ====================================================== -->
 
-    <nav class="navbar navbar-dark custom-navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
 
         <div class="container">
 
-            <a
-                class="navbar-brand fw-bold"
-                href="index.html">
-
-                <i class="bi bi-shield-check"></i>
-
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-shield-lock-fill"></i>
                 AuthUI
-
             </a>
 
 
-            <a
-                href="index.html"
-                class="btn btn-outline-light btn-sm">
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
 
-                <i class="bi bi-house"></i>
+                <span class="navbar-toggler-icon"></span>
 
-                Home
+            </button>
 
-            </a>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="index.html">
+                            Home
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active" href="login.html">
+                            Login
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="register.html">
+                            Register
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
 
         </div>
 
     </nav>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          LOGIN SECTION
-    ========================== -->
+    ====================================================== -->
 
     <main>
 
-        <section class="auth-section">
+        <section class="auth-section py-5">
 
             <div class="container">
 
-                <div class="row justify-content-center">
-
-                    <div class="col-12 col-sm-10 col-md-7 col-lg-5">
+                <div class="row justify-content-center align-items-center">
 
 
-                        <!-- LOGIN CARD -->
+                    <!-- Login Card -->
 
-                        <div class="auth-card">
+                    <div class="col-12 col-sm-10 col-md-8 col-lg-5">
 
-
-                            <!-- ICON -->
-
-                            <div class="auth-icon">
-
-                                <i class="bi bi-person-circle"></i>
-
-                            </div>
+                        <div class="card auth-card border-0 shadow-lg">
 
 
-                            <!-- TITLE -->
-
-                            <h1 class="text-center">
-                                Welcome Back
-                            </h1>
+                            <div class="card-body p-4 p-md-5">
 
 
-                            <p class="text-center text-muted">
-                                Login to your AuthUI account
-                            </p>
+                                <!-- Icon -->
 
+                                <div class="text-center mb-4">
 
-                            <!-- LOGIN FORM -->
+                                    <div class="auth-icon">
 
-                            <form id="loginForm"
-                                  novalidate>
-
-
-                                <!-- EMAIL -->
-
-                                <div class="mb-3">
-
-                                    <label
-                                        for="loginEmail"
-                                        class="form-label">
-
-                                        Email Address
-
-                                    </label>
-
-
-                                    <div class="input-group">
-
-                                        <span class="input-group-text">
-
-                                            <i class="bi bi-envelope"></i>
-
-                                        </span>
-
-
-                                        <input
-                                            type="email"
-                                            class="form-control"
-                                            id="loginEmail"
-                                            name="email"
-                                            placeholder="Enter your email"
-                                            autocomplete="email"
-                                            required>
+                                        <i class="bi bi-person-circle"></i>
 
                                     </div>
 
 
-                                    <div
-                                        id="loginEmailError"
-                                        class="form-error">
-                                    </div>
+                                    <h1 class="h3 fw-bold mt-3">
+                                        Welcome Back
+                                    </h1>
+
+
+                                    <p class="text-muted mb-0">
+                                        Login to your AuthUI account
+                                    </p>
 
                                 </div>
 
 
-                                <!-- PASSWORD -->
 
-                                <div class="mb-3">
+                                <!-- Login Form -->
 
-                                    <label
-                                        for="loginPassword"
-                                        class="form-label">
-
-                                        Password
-
-                                    </label>
+                                <form id="loginForm" novalidate>
 
 
-                                    <div class="input-group">
+                                    <!-- Email -->
 
-                                        <span class="input-group-text">
-
-                                            <i class="bi bi-lock"></i>
-
-                                        </span>
-
-
-                                        <input
-                                            type="password"
-                                            class="form-control"
-                                            id="loginPassword"
-                                            name="password"
-                                            placeholder="Enter your password"
-                                            autocomplete="current-password"
-                                            required>
-
-
-                                        <!-- SHOW / HIDE -->
-
-                                        <button
-                                            type="button"
-                                            class="btn btn-outline-secondary"
-                                            id="toggleLoginPassword">
-
-                                            <i
-                                                class="bi bi-eye"
-                                                id="loginPasswordIcon">
-                                            </i>
-
-                                        </button>
-
-                                    </div>
-
-
-                                    <div
-                                        id="loginPasswordError"
-                                        class="form-error">
-                                    </div>
-
-                                </div>
-
-
-                                <!-- REMEMBER ME -->
-
-                                <div
-                                    class="d-flex justify-content-between align-items-center mb-4">
-
-                                    <div class="form-check">
-
-                                        <input
-                                            class="form-check-input"
-                                            type="checkbox"
-                                            id="rememberMe">
+                                    <div class="mb-3">
 
                                         <label
-                                            class="form-check-label"
-                                            for="rememberMe">
+                                            for="loginEmail"
+                                            class="form-label fw-semibold">
 
-                                            Remember me
+                                            Email Address
 
                                         </label>
 
+
+                                        <div class="input-group">
+
+                                            <span class="input-group-text">
+
+                                                <i class="bi bi-envelope"></i>
+
+                                            </span>
+
+
+                                            <input
+                                                type="email"
+                                                class="form-control"
+                                                id="loginEmail"
+                                                name="email"
+                                                placeholder="Enter your email"
+                                                autocomplete="email"
+                                                required>
+
+                                        </div>
+
+
+                                        <div
+                                            id="loginEmailError"
+                                            class="text-danger small mt-1">
+                                        </div>
+
                                     </div>
 
 
-                                    <a
-                                        href="#"
-                                        class="forgot-link">
 
-                                        Forgot Password?
+                                    <!-- Password -->
 
-                                    </a>
+                                    <div class="mb-3">
+
+                                        <label
+                                            for="loginPassword"
+                                            class="form-label fw-semibold">
+
+                                            Password
+
+                                        </label>
+
+
+                                        <div class="input-group">
+
+                                            <span class="input-group-text">
+
+                                                <i class="bi bi-lock"></i>
+
+                                            </span>
+
+
+                                            <input
+                                                type="password"
+                                                class="form-control"
+                                                id="loginPassword"
+                                                name="password"
+                                                placeholder="Enter your password"
+                                                autocomplete="current-password"
+                                                required>
+
+
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary"
+                                                id="toggleLoginPassword"
+                                                aria-label="Show password">
+
+                                                <i
+                                                    class="bi bi-eye"
+                                                    id="loginEyeIcon">
+                                                </i>
+
+                                            </button>
+
+                                        </div>
+
+
+                                        <div
+                                            id="loginPasswordError"
+                                            class="text-danger small mt-1">
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <!-- Remember Me / Forgot Password -->
+
+                                    <div
+                                        class="d-flex justify-content-between align-items-center mb-4">
+
+                                        <div class="form-check">
+
+                                            <input
+                                                class="form-check-input"
+                                                type="checkbox"
+                                                id="rememberMe">
+
+                                            <label
+                                                class="form-check-label"
+                                                for="rememberMe">
+
+                                                Remember me
+
+                                            </label>
+
+                                        </div>
+
+
+                                        <a href="#"
+                                           class="text-primary text-decoration-none">
+
+                                            Forgot password?
+
+                                        </a>
+
+                                    </div>
+
+
+
+                                    <!-- Login Button -->
+
+                                    <button
+                                        type="submit"
+                                        class="btn btn-primary w-100 py-2 fw-semibold">
+
+                                        <i class="bi bi-box-arrow-in-right me-2"></i>
+
+                                        Login
+
+                                    </button>
+
+
+                                    <!-- Success Message -->
+
+                                    <div
+                                        id="loginSuccess"
+                                        class="alert alert-success mt-3 d-none"
+                                        role="alert">
+
+                                        <i class="bi bi-check-circle me-2"></i>
+
+                                        Login successful!
+
+                                    </div>
+
+
+                                </form>
+
+
+
+                                <!-- Register Link -->
+
+                                <div class="text-center mt-4">
+
+                                    <p class="mb-0 text-muted">
+
+                                        Don't have an account?
+
+                                        <a
+                                            href="register.html"
+                                            class="text-primary fw-semibold text-decoration-none">
+
+                                            Create Account
+
+                                        </a>
+
+                                    </p>
 
                                 </div>
 
-
-                                <!-- LOGIN BUTTON -->
-
-                                <button
-                                    type="submit"
-                                    class="btn btn-primary w-100 login-btn">
-
-                                    <i class="bi bi-box-arrow-in-right"></i>
-
-                                    Login
-
-                                </button>
-
-
-                                <!-- FORM MESSAGE -->
-
-                                <div
-                                    id="loginMessage"
-                                    class="form-message text-center">
-                                </div>
-
-
-                            </form>
-
-
-                            <!-- REGISTER LINK -->
-
-                            <div class="text-center mt-4">
-
-                                <p class="mb-0">
-
-                                    Don't have an account?
-
-                                    <a
-                                        href="register.html"
-                                        class="register-link">
-
-                                        Create Account
-
-                                    </a>
-
-                                </p>
 
                             </div>
-
 
                         </div>
 
@@ -317,35 +363,77 @@
     </main>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          FOOTER
-    ========================== -->
+    ====================================================== -->
 
-    <footer class="custom-footer">
+    <footer class="bg-dark text-white text-center py-4">
 
-        <div class="container text-center">
+        <div class="container">
 
-            <p class="mb-0">
+            <h5 class="fw-bold">
+                AuthUI
+            </h5>
 
-                © 2026 AuthUI | Task 2
-
+            <p class="mb-2 text-white-50">
+                Responsive Authentication Interface
             </p>
+
+
+            <div>
+
+                <a
+                    href="https://github.com/prasad872005"
+                    target="_blank"
+                    class="text-white me-3">
+
+                    <i class="bi bi-github"></i>
+
+                    GitHub
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="text-white">
+
+                    <i class="bi bi-linkedin"></i>
+
+                    LinkedIn
+
+                </a>
+
+            </div>
+
+
+            <hr class="border-secondary my-3">
+
+
+            <small class="text-white-50">
+
+                © 2026 Prasad Gadale. All Rights Reserved.
+
+            </small>
 
         </div>
 
     </footer>
 
 
-    <!-- Bootstrap JS -->
+
+    <!-- Bootstrap JavaScript -->
 
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
 
 
-    <!-- Custom JS -->
+    <!-- Custom JavaScript -->
 
     <script src="script.js"></script>
+
 
 </body>
 
